@@ -49,7 +49,7 @@ export const ParticleBackground = ({ className = "" }: { className?: string }) =
       constructor(w: number, h: number) {
         this.x = Math.random() * w;
         this.y = Math.random() * h;
-        this.size = Math.random() * 2 + 1;
+        this.size = Math.random() * 7 + 1;
         this.baseSpeedX = Math.random() * 0.4 - 0.2;
         this.baseSpeedY = Math.random() * 0.4 - 0.2;
         this.speedX = this.baseSpeedX;
@@ -98,7 +98,7 @@ export const ParticleBackground = ({ className = "" }: { className?: string }) =
       const w = rect.width;
       const h = rect.height;
       particlesRef.current = [];
-      const numberOfParticles = Math.min((w * h) / 8000, 200);
+      const numberOfParticles = Math.min((w * h) / 8000, 400);
       for (let i = 0; i < numberOfParticles; i++) {
         particlesRef.current.push(new Particle(w, h));
       }

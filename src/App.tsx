@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import portfolioData from './portfolio-data.json';
 import { ParticleBackground } from './components/ParticleBackground';
+import { TypewriterEffect } from './components/TypewriterEffect';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -234,8 +235,8 @@ export default function App() {
                 </div>
 
                 <div className="mt-auto flex gap-4 justify-center">
-                  <a href={personal.github} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Github size={20} /></a>
-                  <a href={personal.linkedin} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Linkedin size={20} /></a>
+                  <a href={personal.github} target="blank" className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Github size={20} /></a>
+                  <a href={personal.linkedin} target="_blank" className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Linkedin size={20} /></a>
                   <a href={`mailto:${personal.email}`} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Mail size={20} /></a>
                 </div>
               </div>
@@ -245,7 +246,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 overflow-hidden">
         {/* Modern Hero Background with Image */}
         <div className="absolute inset-0 -z-10">
           <img 
@@ -273,8 +274,13 @@ export default function App() {
           >
             Available for new opportunities
           </motion.span>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter text-black dark:text-white">
-            I build <span className="text-gradient">Intelligent</span> Systems.
+          <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tighter text-black dark:text-white">
+            I build{' '}
+            <TypewriterEffect 
+              strings={['Intelligent', 'Scalable', 'Robust', 'Innovative']} 
+              pauseTime={2500}
+            />
+            {' '}Systems.
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
             {personal.bio}
@@ -290,15 +296,16 @@ export default function App() {
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href={personal.resumeUrl.includes('drive.google.com') 
-                ? personal.resumeUrl.replace('/view?usp=sharing', '/view').replace('/view', '/uc?export=download')
-                : personal.resumeUrl}
+              // href={personal.resumeUrl.includes('drive.google.com') 
+              //   ? personal.resumeUrl.replace('/view?usp=sharing', '/view').replace('/view', '/uc?export=download')
+              //   : personal.resumeUrl}
+                href = {personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary group"
-              download="Resume.pdf"
+              download="Ashutosh_Resume.pdf"
             >
-              Download CV 
+              View CV 
               <Download size={18} className="group-hover:translate-y-1 transition-transform" />
             </a>
           </div>
@@ -308,9 +315,11 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="mt-2 flex flex-col items-center "
         >
-          <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500">Scroll to explore</span>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 ">Scroll to explore</span>
+
+
           <div className="w-px h-12 bg-gradient-to-b from-black/20 dark:from-white/20 to-transparent" />
         </motion.div>
       </section>
@@ -358,8 +367,8 @@ export default function App() {
               <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{personal.name}</h3>
               <p className="text-gray-500 dark:text-gray-400 font-medium mb-6">{personal.role}</p>
               <div className="flex gap-4">
-                <a href={personal.github} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Github size={20} /></a>
-                <a href={personal.linkedin} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Linkedin size={20} /></a>
+                <a href={personal.github} target="_blank" className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Github size={20} /></a>
+                <a href={personal.linkedin} target="_blank" className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Linkedin size={20} /></a>
                 <a href={`mailto:${personal.email}`} className="p-3 glass-card hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"><Mail size={20} /></a>
               </div>
             </div>
@@ -369,7 +378,7 @@ export default function App() {
 
       {/* Skills Section with Particles */}
       <section id="skills" className="py-32 relative overflow-hidden bg-white dark:bg-black border-y border-black/5 dark:border-white/5">
-        <ParticleBackground className="opacity-60 dark:opacity-80" />
+        {/* <ParticleBackground className="opacity-60 dark:opacity-80" /> */}
         
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
@@ -544,8 +553,8 @@ export default function App() {
             <p className="text-gray-600 dark:text-gray-400">Always open to discussing new projects or AI research.</p>
           </div>
           <div className="flex gap-6">
-            <a href={personal.github} className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-all hover:scale-125 active:scale-90"><Github size={24} /></a>
-            <a href={personal.linkedin} className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-all hover:scale-125 active:scale-90"><Linkedin size={24} /></a>
+            <a href={personal.github} target="_blank" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-all hover:scale-125 active:scale-90"><Github size={24} /></a>
+            <a href={personal.linkedin} target="_blank" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-all hover:scale-125 active:scale-90"><Linkedin size={24} /></a>
             <a href={`mailto:${personal.email}`} className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-all hover:scale-125 active:scale-90"><Mail size={24} /></a>
           </div>
         </div>

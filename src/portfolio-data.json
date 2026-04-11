@@ -1,21 +1,21 @@
 {
   "personal": {
-    "name": "Name",
+    "name": "Ashutosh Yadav",
     "role": "AI & Machine Learning Engineer",
     "experience": "3 Years",
-    "location": "San Francisco, CA",
-    "email": "alex.rivera@example.com",
-    "github": "https://github.com",
+    "location": "Delhi NCR, India",
+    "email": "yadavashu.ashu08@gmail.com",
+    "github": "https://github.com/Darthvader19",
     "linkedin": "https://linkedin.com",
-    "resumeUrl": "#",
+    "resumeUrl": "https://drive.google.com/file/d/1VcEgUBtBY6FLdWAxCVM9RCn2goXdY7RV/view?usp=sharing",
     "heroImage": "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1920",
     "bio": "Specializing in Deep Learning, Computer Vision, and Generative AI. I build scalable ML systems that bridge the gap between research and production."
   },
   "skills": [
-    { "category": "Languages", "items": ["Python", "C++", "SQL", "TypeScript"] },
-    { "category": "Frameworks", "items": ["PyTorch", "TensorFlow", "JAX", "Scikit-Learn"] },
+    { "category": "Languages", "items": ["Python", "C++", "SQL", "JavaScript"] },
+    { "category": "Frameworks", "items": ["PyTorch", "TensorFlow", "Scikit-Learn","NLTK","LangChain","BeautifulSoup","Selenium"] },
     { "category": "Tools", "items": ["Docker", "Kubernetes", "AWS", "GCP", "MLflow"] },
-    { "category": "Specializations", "items": ["LLMs", "Computer Vision", "NLP", "Reinforcement Learning"] }
+    { "category": "Specializations", "items": ["ML","LLMs", "Computer Vision", "NLP", "Reinforcement Learning"] }
   ],
   "projects": [
     {
