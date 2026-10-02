@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Multi-agent customer support system">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#111436"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#4fd1c5" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <marker id="art" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#4fd1c5"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .ft{fill:#c9d0e6;font-size:12.5px}
+      .n{fill:url(#node);stroke:rgba(255,255,255,0.16);stroke-width:1.4}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .bus{stroke:#4fd1c5;stroke-opacity:0.6;stroke-width:1.6;fill:none}
+      .tag{fill:#8ee6db;font-size:11px}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">Customer Support &amp; Sales Agents</text>
+  <text class="s" x="40" y="84">LangGraph &#183; CrewAI &#183; RAG &#183; sentiment &#183; human handoff</text>
+  <rect class="chip" x="648" y="36" width="112" height="30" rx="15"/>
+  <text class="ns" x="704" y="55" text-anchor="middle">FastAPI served</text>
+
+  <rect class="n" x="40" y="190" width="180" height="76" rx="14"/>
+  <text class="nt" x="60" y="222">Customer Query</text>
+  <text class="ns" x="60" y="244">chat &#183; email &#183; ticket</text>
+
+  <rect class="n" x="260" y="190" width="160" height="76" rx="14"/>
+  <text class="nt" x="280" y="222">Triage Agent</text>
+  <text class="ns" x="280" y="244">intent + urgency</text>
+
+  <rect class="n" x="540" y="112" width="220" height="58" rx="12"/>
+  <text class="nt" x="560" y="136">RAG Knowledge Agent</text>
+  <text class="ns" x="560" y="156">docs &#183; policies &#183; past tickets</text>
+
+  <rect class="n" x="540" y="182" width="220" height="58" rx="12"/>
+  <text class="nt" x="560" y="206">Billing Specialist</text>
+  <text class="ns" x="560" y="226">refunds &#183; invoices</text>
+
+  <rect class="n" x="540" y="252" width="220" height="58" rx="12"/>
+  <text class="nt" x="560" y="276">Technical Specialist</text>
+  <text class="ns" x="560" y="296">troubleshooting steps</text>
+
+  <rect class="n" x="540" y="322" width="220" height="58" rx="12"/>
+  <text class="nt" x="560" y="346">Sales Specialist</text>
+  <text class="ns" x="560" y="366">upsell &#183; plans</text>
+
+  <path class="fl" d="M224 228H256" marker-end="url(#ar)"/>
+
+  <path class="bus" d="M420 228H496"/>
+  <path class="bus" d="M500 141V351"/>
+  <path class="bus" d="M500 141H536" marker-end="url(#art)"/>
+  <path class="bus" d="M500 211H536" marker-end="url(#art)"/>
+  <path class="bus" d="M500 281H536" marker-end="url(#art)"/>
+  <path class="bus" d="M500 351H536" marker-end="url(#art)"/>
+  <text class="tag" x="424" y="212" text-anchor="middle">route</text>
+
+  <rect class="chip" x="40" y="308" width="180" height="52" rx="12"/>
+  <text class="nt" x="56" y="332">Human Handoff</text>
+  <text class="ns" x="56" y="350">low confidence path</text>
+
+  <rect class="chip" x="40" y="374" width="180" height="38" rx="19"/>
+  <text class="ft" x="58" y="398">Sentiment aware</text>
+
+  <rect class="chip" x="248" y="440" width="170" height="38" rx="19"/>
+  <text class="ft" x="266" y="464">Autonomous replies</text>
+  <rect class="chip" x="432" y="440" width="150" height="38" rx="19"/>
+  <text class="ft" x="450" y="464">LangGraph flow</text>
+  <rect class="chip" x="596" y="440" width="164" height="38" rx="19"/>
+  <text class="ft" x="614" y="464">Scalable service</text>
+</svg>

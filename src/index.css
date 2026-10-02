@@ -1,58 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
-  
-  --color-accent: #3b82f6;
-  --color-accent-foreground: #ffffff;
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Geist", ui-sans-serif, sans-serif;
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-hair: var(--hair);
+  --color-shell: var(--shell);
+  --color-core: var(--core);
+  --color-accent: var(--accent);
+}
+
+:root {
+  --page: #f5f6f8;
+  --ink: #0d0f14;
+  --muted: #596070;
+  --hair: rgba(13, 15, 20, 0.09);
+  --shell: rgba(13, 15, 20, 0.04);
+  --core: #ffffff;
+  --accent: #4f5bd5;
+  --hl: rgba(255, 255, 255, 0.9);
+  --glow-a: rgba(99, 102, 241, 0.16);
+  --glow-b: rgba(16, 185, 129, 0.1);
+  --lift: 0 30px 60px -30px rgba(30, 40, 90, 0.18);
+}
+
+.dark {
+  --page: #050505;
+  --ink: #f3f4f6;
+  --muted: #9aa0ae;
+  --hair: rgba(255, 255, 255, 0.1);
+  --shell: rgba(255, 255, 255, 0.04);
+  --core: #0c0d10;
+  --accent: #8b9bff;
+  --hl: rgba(255, 255, 255, 0.15);
+  --glow-a: rgba(124, 92, 255, 0.22);
+  --glow-b: rgba(16, 185, 129, 0.14);
+  --lift: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
-  body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#0a0a0a] dark:text-gray-100 font-sans antialiased transition-colors duration-300;
+  [id] {
+    scroll-margin-top: 6rem;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+  body {
+    @apply bg-page text-ink font-sans antialiased;
+    transition: background-color 0.5s var(--ease-fluid), color 0.5s var(--ease-fluid);
+  }
+  h1, h2, h3 {
     @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/80 dark:bg-white/5 border border-blue-100 dark:border-white/10 backdrop-blur-xl rounded-2xl shadow-sm dark:shadow-none;
-  }
-
-  .btn-primary {
-    @apply px-10 py-4 bg-blue-600 text-white rounded-full font-bold transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-105 active:scale-95;
-  }
-
-  .btn-secondary {
-    @apply px-10 py-4 bg-white/80 dark:bg-white/5 border border-blue-100 dark:border-white/10 backdrop-blur-xl text-slate-900 dark:text-white rounded-full font-bold transition-all duration-300 flex items-center gap-2 hover:bg-blue-50 dark:hover:bg-white/10 hover:scale-105 active:scale-95;
-  }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400;
+  .core-hl {
+    box-shadow: inset 0 1px 1px var(--hl), var(--lift);
   }
 }
 
-/* Custom scrollbar for modern look */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
 ::-webkit-scrollbar-thumb {
-  @apply bg-black/10 dark:bg-white/10 rounded-full hover:bg-black/20 dark:hover:bg-white/20 transition-colors;
+  background: var(--hair);
+  border-radius: 9999px;
 }
-

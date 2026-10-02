@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Full stack web application projects">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#0e1730"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#4fd1c5" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .ft{fill:#c9d0e6;font-size:12.5px}
+      .card{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.14);stroke-width:1.3}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .spark{stroke:#4fd1c5;stroke-width:2;fill:none}
+      .gl{stroke:rgba(255,255,255,0.22);stroke-width:1.6;fill:none}
+      .xs{fill:#7ee2b8;font-size:20px;font-weight:700}
+      .os{fill:#ff9c9c;font-size:20px;font-weight:700}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">Full-Stack Web Applications</text>
+  <text class="s" x="40" y="84">MERN &#183; Socket.IO &#183; FastAPI &#183; MongoDB</text>
+  <rect class="chip" x="642" y="36" width="118" height="30" rx="15"/>
+  <text class="ns" x="701" y="55" text-anchor="middle">realtime + REST</text>
+
+  <rect class="card" x="40" y="118" width="340" height="170" rx="16"/>
+  <text class="nt" x="60" y="150">Amazon Price Tracker</text>
+  <text class="ns" x="60" y="170">Python &#183; Selenium &#183; price alerts</text>
+  <path class="gl" d="M62 254H358"/>
+  <path class="gl" d="M62 186V254"/>
+  <path class="spark" d="M74 234L124 216L174 224L224 198L274 208L344 180"/>
+  <circle cx="344" cy="180" r="4.5" fill="#4fd1c5"/>
+  <text class="ns" x="60" y="274">tracks price drops over time</text>
+
+  <rect class="card" x="420" y="118" width="340" height="170" rx="16"/>
+  <text class="nt" x="440" y="150">Tic-Tac-Toe Realtime</text>
+  <text class="ns" x="440" y="170">React &#183; Node &#183; Socket.IO</text>
+  <path class="gl" d="M462 194H622"/>
+  <path class="gl" d="M462 228H622"/>
+  <path class="gl" d="M515 194V262"/>
+  <path class="gl" d="M568 194V262"/>
+  <text class="xs" x="482" y="222">X</text>
+  <text class="os" x="536" y="256">O</text>
+  <text class="xs" x="590" y="222">X</text>
+  <text class="ns" x="648" y="212">live</text>
+  <text class="ns" x="648" y="232">moves</text>
+  <text class="ns" x="440" y="278">two players, one board</text>
+
+  <path class="fl" d="M200 288V320" marker-end="url(#ar)"/>
+  <path class="fl" d="M590 288V320" marker-end="url(#ar)"/>
+
+  <rect class="chip" x="40" y="326" width="150" height="56" rx="12"/>
+  <text class="nt" x="56" y="352">REST APIs</text>
+  <text class="ns" x="56" y="370">auth + inventory</text>
+
+  <rect class="chip" x="206" y="326" width="186" height="56" rx="12"/>
+  <text class="nt" x="222" y="352">WebSocket Events</text>
+  <text class="ns" x="222" y="370">streaming responses</text>
+
+  <rect class="chip" x="408" y="326" width="150" height="56" rx="12"/>
+  <text class="nt" x="424" y="352">MongoDB</text>
+  <text class="ns" x="424" y="370">orders + carts</text>
+
+  <rect class="chip" x="574" y="326" width="168" height="56" rx="12"/>
+  <text class="nt" x="590" y="352">Express + React</text>
+  <text class="ns" x="590" y="370">MERN front to back</text>
+
+  <text class="ns" x="40" y="420">Amazon tracker plus realtime game plus embedded chat component</text>
+
+  <rect class="chip" x="40" y="444" width="160" height="38" rx="19"/>
+  <text class="ft" x="58" y="468">Python scraping</text>
+  <rect class="chip" x="220" y="444" width="150" height="38" rx="19"/>
+  <text class="ft" x="238" y="468">MERN stack</text>
+  <rect class="chip" x="390" y="444" width="176" height="38" rx="19"/>
+  <text class="ft" x="408" y="468">Realtime sockets</text>
+</svg>

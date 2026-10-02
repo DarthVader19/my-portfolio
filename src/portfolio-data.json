@@ -2,59 +2,121 @@
   "personal": {
     "name": "Ashutosh Yadav",
     "role": "AI & Machine Learning Engineer",
-    "experience": "3 Years",
-    "location": "Delhi NCR, India",
+    "experience": "3+ Years",
+    "location": "Noida, Uttar Pradesh, India",
     "email": "yadavashu.ashu08@gmail.com",
     "github": "https://github.com/Darthvader19",
-    "linkedin": "https://linkedin.com",
+    "linkedin": "https://linkedin.com/in/ashutosh-1y",
     "resumeUrl": "https://drive.google.com/file/d/1MCshTXKGBi5l7zNRk95PODdYuxtBlPg3/view?usp=drive_link",
     "heroImage": "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1920",
-    "bio": "Specializing in Deep Learning, Computer Vision, and Generative AI. I build scalable ML systems that bridge the gap between research and production."
+    "bio": "AI/ML Engineer with hands-on experience building end-to-end machine learning systems, from data scraping and feature extraction to model implementation and hardware integration. Proficient in PyTorch, TensorFlow, LangGraph, and full-stack development with the MERN stack."
   },
   "skills": [
-    { "category": "Languages", "items": ["Python", "C++", "SQL", "JavaScript"] },
-    { "category": "Frameworks", "items": ["PyTorch", "TensorFlow", "Scikit-Learn","NLTK","LangChain","BeautifulSoup","Selenium"] },
-    { "category": "Tools", "items": ["Docker", "Kubernetes", "AWS", "GCP", "MLflow"] },
-    { "category": "Specializations", "items": ["ML","LLMs", "Computer Vision", "NLP", "Reinforcement Learning"] }
+    { "category": "Languages", "items": ["Python", "C++", "JavaScript", "SQL"] },
+    { "category": "AI / ML", "items": ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "NLTK", "OpenCV", "MLflow"] },
+    { "category": "LLM & Agents", "items": ["RAG", "PEFT", "LoRA", "QLoRA", "LangChain", "LangGraph", "FAISS"] },
+    { "category": "Web & Tools", "items": ["FastAPI", "React", "Node.js", "MongoDB", "PostgreSQL", "Docker", "AWS", "Git"] }
   ],
   "projects": [
     {
       "id": 1,
-      "title": "NeuralVision Pro",
-      "description": "Real-time object detection and segmentation system for autonomous drones using custom YOLOv8 architecture.",
-      "tags": ["Computer Vision", "PyTorch", "Edge AI"],
+      "title": "Agent Evaluation & Benchmarking Framework",
+      "description": "Evaluation framework that benchmarks ReAct, Plan-and-Execute, and LangGraph agents on custom and GAIA-style tasks. An automated harness measures success rate, token efficiency, error recovery, and latency across 100+ cases, with reflection loops and a comparison of LangGraph, CrewAI, and AutoGen.",
+      "tags": ["LangGraph", "Agents", "Evaluation"],
       "link": "#",
-      "image": "https://picsum.photos/seed/vision/800/600"
+      "image": "/projects/agents.svg"
     },
     {
       "id": 2,
-      "title": "Lumina LLM",
-      "description": "Fine-tuned Llama-3 model for specialized medical documentation with 98% accuracy on domain-specific benchmarks.",
-      "tags": ["NLP", "LLMs", "Transformers"],
+      "title": "Customer Support / Sales Multi-Agent System",
+      "description": "Multi-agent system built with LangGraph and CrewAI: a triage agent, a RAG knowledge agent, and specialist agents for billing, technical support, and sales. Includes sentiment analysis and human handoff, served through a FastAPI backend.",
+      "tags": ["LangGraph", "RAG", "FastAPI"],
       "link": "#",
-      "image": "https://picsum.photos/seed/llm/800/600"
+      "image": "/projects/support.svg"
     },
     {
       "id": 3,
-      "title": "FlowState RL",
-      "description": "Reinforcement learning agent for optimizing data center cooling systems, reducing energy consumption by 15%.",
-      "tags": ["RL", "Optimization", "Python"],
+      "title": "Word2Vec from Scratch",
+      "description": "Skip-Gram and CBOW implementations of Efficient Estimation of Word Representations in Vector Space, written in Python and PyTorch. Dense embeddings capture semantic relationships and are visualized with Plotly.",
+      "tags": ["PyTorch", "NLP", "Embeddings"],
       "link": "#",
-      "image": "https://picsum.photos/seed/rl/800/600"
+      "image": "/projects/word2vec.svg"
+    },
+    {
+      "id": 4,
+      "title": "Vibe Outfits Matcher",
+      "description": "Outfit recommender that scrapes products from H&M, Amazon, and Nordstrom with Scrape.do and Scrapy, stores them in MongoDB, and matches looks with embedding-based semantic search.",
+      "tags": ["Scrapy", "MongoDB", "Embeddings"],
+      "link": "https://github.com/DarthVader19/luvfitsV1",
+      "image": "/projects/outfits.svg"
+    },
+    {
+      "id": 5,
+      "title": "SURF Feature Matching",
+      "description": "SURF (Speeded-Up Robust Features) implemented with OpenCV and NumPy to detect and match keypoints for object recognition and image stitching.",
+      "tags": ["OpenCV", "Computer Vision", "NumPy"],
+      "link": "#",
+      "image": "/projects/surf.svg"
+    },
+    {
+      "id": 6,
+      "title": "RAG Chatbot for Summary and Chat",
+      "description": "Retrieval-augmented chatbot that summarizes and answers questions over uploaded documents. Combines a FAISS dense index with Hugging Face transformers via LangChain.",
+      "tags": ["RAG", "LangChain", "FAISS"],
+      "link": "#",
+      "image": "/projects/rag.svg"
+    },
+    {
+      "id": 7,
+      "title": "Multimodal Telegram RAG Bot",
+      "description": "Multimodal RAG bot on Telegram that answers questions from a document knowledge base with source attribution and describes images with the Salesforce BLIP vision model. ChromaDB retrieval runs on all-MiniLM-L6-v2 embeddings with Mistral or GPT-3.5 generation, plus per-user conversation memory and TTL response caching.",
+      "tags": ["RAG", "Telegram", "ChromaDB"],
+      "link": "https://github.com/DarthVader19/telegram_rag_bot",
+      "image": "/projects/telegram-rag.svg"
+    },
+    {
+      "id": 8,
+      "title": "Sentiment Analysis of Web Blogs",
+      "description": "Pipeline that scrapes 150+ blog posts with BeautifulSoup and classifies sentiment with NLTK. Includes a from-scratch classifier compared against standard NLTK functions.",
+      "tags": ["NLTK", "BeautifulSoup", "NLP"],
+      "link": "#",
+      "image": "/projects/sentiment.svg"
+    },
+    {
+      "id": 9,
+      "title": "Facial Emotion Recognition",
+      "description": "Sequential CNN trained with Keras on FER2013 to classify 7 facial emotions at 65% accuracy. Image preprocessing and data augmentation were used to reduce overfitting.",
+      "tags": ["Keras", "CNN", "Computer Vision"],
+      "link": "#",
+      "image": "/projects/emotion.svg"
+    },
+    {
+      "id": 10,
+      "title": "Full-Stack Web Applications",
+      "description": "Suite of web projects including an Amazon price tracker in Python and a real-time Tic-Tac-Toe game built with the MERN stack and Socket.IO.",
+      "tags": ["MERN", "Socket.IO", "Python"],
+      "link": "https://github.com/DarthVader19/amazon-price-tracker",
+      "image": "/projects/fullstack.svg"
     }
   ],
   "experience": [
     {
-      "company": "TechNova AI",
-      "role": "Senior ML Engineer",
-      "period": "2023 - Present",
-      "description": "Leading the development of generative AI features for enterprise clients."
+      "company": "ESniff Devices (Incubated at SIIC, IIT Kanpur)",
+      "role": "AI/ML Engineer (Research Associate)",
+      "period": "June 2024 – Present · Noida",
+      "description": "End-to-end development of an AI-powered E-Nose for identifying food adulterants. Optimized sensor hardware for gas pattern analysis and built a pattern recognition model at 85% test accuracy. Architected the data pipeline from raw sensor collection through preprocessing to classification, served predictions with FastAPI, prototyped a Streamlit interface, and automated acquisition and inference with LangGraph agents."
     },
     {
-      "company": "DataStream Systems",
-      "role": "Machine Learning Engineer",
-      "period": "2021 - 2023",
-      "description": "Optimized large-scale data pipelines and implemented predictive maintenance models."
+      "company": "NYXify Technologies",
+      "role": "Data Science Intern",
+      "period": "March 2024 – May 2024 · Remote",
+      "description": "Processed 100,000+ audio files with the VGGish model for feature extraction ahead of a sound classification task. Built a Python scraping pipeline with BeautifulSoup and Requests that collected and cleaned 1.5 million images to expand the dataset."
+    },
+    {
+      "company": "Badatya Pvt Ltd",
+      "role": "Full Stack Developer",
+      "period": "Nov 2022 – May 2023 · Delhi",
+      "description": "Developed and maintained a MERN e-commerce application. Built REST APIs with Node.js and Express for authentication, inventory, and orders, and a streaming FastAPI chat component (Python, React, MongoDB) that can be embedded on any site."
     }
   ],
   "blogs": [

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Word2Vec skip-gram and CBOW embeddings">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#131034"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#8b9bff" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#8b9bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <marker id="art" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#4fd1c5"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .w{fill:#c9d0e6;font-size:12px}
+      .eq{fill:#eef0f6;font-size:13px;font-weight:600}
+      .n{fill:url(#node);stroke:rgba(255,255,255,0.16);stroke-width:1.4}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .axis{stroke:rgba(255,255,255,0.14);stroke-width:1.2;fill:none}
+      .vec{stroke:#4fd1c5;stroke-width:1.6;fill:none;stroke-dasharray:5 5}
+      .dot{fill:#7c8cff}
+      .dotq{fill:#4fd1c5}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">Word2Vec from Scratch</text>
+  <text class="s" x="40" y="84">Skip-Gram &amp; CBOW &#183; PyTorch &#183; Plotly</text>
+  <rect class="chip" x="648" y="36" width="112" height="30" rx="15"/>
+  <text class="ns" x="704" y="55" text-anchor="middle">from the paper</text>
+
+  <rect class="n" x="40" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="58" y="162">Text Corpus</text>
+  <text class="ns" x="58" y="184">cleaned tokens</text>
+
+  <rect class="n" x="218" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="236" y="162">Skip-Gram &amp; CBOW</text>
+  <text class="ns" x="236" y="184">predict context</text>
+
+  <rect class="n" x="396" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="414" y="162">Embedding Matrix</text>
+  <text class="ns" x="414" y="184">dense vectors</text>
+
+  <rect class="n" x="574" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="592" y="162">Vector Space</text>
+  <text class="ns" x="592" y="184">semantic relations</text>
+
+  <path class="fl" d="M204 168H214" marker-end="url(#ar)"/>
+  <path class="fl" d="M382 168H392" marker-end="url(#ar)"/>
+  <path class="fl" d="M560 168H570" marker-end="url(#ar)"/>
+
+  <path class="axis" d="M60 430H740"/>
+  <path class="axis" d="M60 262V430"/>
+  <text class="ns" x="668" y="448">embedding dim 1</text>
+  <text class="ns" x="46" y="256" text-anchor="end">dim 2</text>
+
+  <circle class="dot" cx="140" cy="352" r="5"/>
+  <text class="w" x="152" y="348">man</text>
+  <circle class="dotq" cx="252" cy="352" r="5"/>
+  <text class="w" x="264" y="348">woman</text>
+  <path class="vec" d="M148 352H244" marker-end="url(#art)"/>
+
+  <circle class="dot" cx="140" cy="398" r="5"/>
+  <text class="w" x="152" y="394">king</text>
+  <circle class="dotq" cx="252" cy="398" r="5"/>
+  <text class="w" x="264" y="394">queen</text>
+  <path class="vec" d="M148 398H244" marker-end="url(#art)"/>
+
+  <circle class="dot" cx="520" cy="300" r="5"/>
+  <text class="w" x="532" y="296">cat</text>
+  <circle class="dot" cx="620" cy="332" r="5"/>
+  <text class="w" x="632" y="328">dog</text>
+  <circle class="dot" cx="430" cy="326" r="5"/>
+  <text class="w" x="442" y="322">paris</text>
+  <circle class="dot" cx="372" cy="372" r="5"/>
+  <text class="w" x="384" y="368">france</text>
+
+  <rect class="chip" x="452" y="384" width="308" height="46" rx="23"/>
+  <text class="eq" x="606" y="413" text-anchor="middle">king &#8722; man + woman &#8776; queen</text>
+</svg>

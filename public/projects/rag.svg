@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Retrieval augmented generation chatbot flow">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#111436"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#7c8cff" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#7c8cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .ft{fill:#c9d0e6;font-size:12.5px}
+      .msg{fill:#eaf0ff;font-size:13px}
+      .cite{fill:#8ee6db;font-size:12px}
+      .n{fill:url(#node);stroke:rgba(255,255,255,0.16);stroke-width:1.4}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .ask{fill:rgba(124,140,255,0.16);stroke:rgba(124,140,255,0.4);stroke-width:1.2}
+      .ans{fill:rgba(255,255,255,0.05);stroke:rgba(255,255,255,0.14);stroke-width:1.2}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">RAG Chatbot: Summary &amp; Chat</text>
+  <text class="s" x="40" y="84">LangChain &#183; FAISS &#183; Hugging Face transformers</text>
+  <rect class="chip" x="642" y="36" width="118" height="30" rx="15"/>
+  <text class="ns" x="701" y="55" text-anchor="middle">custom datasets</text>
+
+  <rect class="n" x="40" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="58" y="162">Uploaded Docs</text>
+  <text class="ns" x="58" y="184">summary + Q&amp;A</text>
+
+  <rect class="n" x="218" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="236" y="162">Chunk + Embed</text>
+  <text class="ns" x="236" y="184">dense vectors</text>
+
+  <rect class="n" x="396" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="414" y="162">FAISS Index</text>
+  <text class="ns" x="414" y="184">top-k retrieval</text>
+
+  <rect class="n" x="574" y="128" width="160" height="80" rx="14"/>
+  <text class="nt" x="592" y="162">LLM Answer</text>
+  <text class="ns" x="592" y="184">grounded context</text>
+
+  <path class="fl" d="M204 168H214" marker-end="url(#ar)"/>
+  <path class="fl" d="M382 168H392" marker-end="url(#ar)"/>
+  <path class="fl" d="M560 168H570" marker-end="url(#ar)"/>
+
+  <rect class="ask" x="380" y="244" width="380" height="54" rx="16"/>
+  <text class="msg" x="400" y="276">Summarise section 3 and cite the sources</text>
+
+  <rect class="ans" x="40" y="316" width="470" height="76" rx="16"/>
+  <text class="msg" x="60" y="346">Section 3 covers the data retention policy for</text>
+  <text class="msg" x="60" y="368">archived records and audit logs.</text>
+  <text class="cite" x="60" y="386">[1] handbook.pdf  &#183;  [2] policy_2024.pdf</text>
+
+  <text class="ns" x="400" y="424" text-anchor="middle">retrieved chunks ground every answer</text>
+
+  <rect class="chip" x="40" y="444" width="150" height="38" rx="19"/>
+  <text class="ft" x="58" y="468">FAISS top-k</text>
+  <rect class="chip" x="210" y="444" width="140" height="38" rx="19"/>
+  <text class="ft" x="228" y="468">Citations</text>
+  <rect class="chip" x="370" y="444" width="196" height="38" rx="19"/>
+  <text class="ft" x="388" y="468">Summary + chat modes</text>
+</svg>

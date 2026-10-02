@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Vibe outfits matcher pipeline">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#1a1030"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#c084fc" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .ft{fill:#c9d0e6;font-size:12.5px}
+      .src{fill:#d8c6fb;font-size:13px;font-weight:600}
+      .n{fill:url(#node);stroke:rgba(255,255,255,0.16);stroke-width:1.4}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .bus{stroke:#c084fc;stroke-opacity:0.6;stroke-width:1.6;fill:none}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">Vibe Outfits Matcher</text>
+  <text class="s" x="40" y="84">Scrape.do &#183; Scrapy &#183; MongoDB &#183; sentence-transformers</text>
+  <rect class="chip" x="642" y="36" width="118" height="30" rx="15"/>
+  <text class="ns" x="701" y="55" text-anchor="middle">300 products</text>
+
+  <rect class="n" x="40" y="126" width="150" height="48" rx="12"/>
+  <text class="src" x="115" y="156" text-anchor="middle">H&amp;M</text>
+  <rect class="n" x="40" y="186" width="150" height="48" rx="12"/>
+  <text class="src" x="115" y="216" text-anchor="middle">Amazon</text>
+  <rect class="n" x="40" y="246" width="150" height="48" rx="12"/>
+  <text class="src" x="115" y="276" text-anchor="middle">Nordstrom</text>
+
+  <rect class="n" x="240" y="146" width="160" height="88" rx="14"/>
+  <text class="nt" x="258" y="184">Scrape + Parse</text>
+  <text class="ns" x="258" y="206">async, concurrent</text>
+
+  <rect class="n" x="430" y="146" width="150" height="88" rx="14"/>
+  <text class="nt" x="448" y="184">MongoDB</text>
+  <text class="ns" x="448" y="206">indexed queries</text>
+
+  <rect class="n" x="610" y="146" width="150" height="88" rx="14"/>
+  <text class="nt" x="628" y="184">Embed + Bundle</text>
+  <text class="ns" x="628" y="206">384-d vectors</text>
+
+  <path class="bus" d="M190 150H216"/>
+  <path class="bus" d="M190 210H216"/>
+  <path class="bus" d="M190 270H216"/>
+  <path class="bus" d="M218 150V270"/>
+  <path class="bus" d="M218 190H236" marker-end="url(#ar)"/>
+
+  <path class="fl" d="M400 190H426" marker-end="url(#ar)"/>
+  <path class="fl" d="M580 190H606" marker-end="url(#ar)"/>
+
+  <path class="bus" d="M685 234V264"/>
+  <path class="bus" d="M122 264H660"/>
+  <path class="bus" d="M122 264V284" marker-end="url(#ar)"/>
+  <path class="bus" d="M301 264V284" marker-end="url(#ar)"/>
+  <path class="bus" d="M480 264V284" marker-end="url(#ar)"/>
+  <path class="bus" d="M659 264V284" marker-end="url(#ar)"/>
+
+  <rect class="chip" x="40" y="288" width="165" height="60" rx="12"/>
+  <text class="nt" x="56" y="316">Color Harmony</text>
+  <text class="ns" x="56" y="336">weight 40%</text>
+
+  <rect class="chip" x="219" y="288" width="165" height="60" rx="12"/>
+  <text class="nt" x="235" y="316">Vibe Overlap</text>
+  <text class="ns" x="235" y="336">weight 30%</text>
+
+  <rect class="chip" x="398" y="288" width="165" height="60" rx="12"/>
+  <text class="nt" x="414" y="316">Price Balance</text>
+  <text class="ns" x="414" y="336">weight 20%</text>
+
+  <rect class="chip" x="577" y="288" width="165" height="60" rx="12"/>
+  <text class="nt" x="593" y="316">Style Score</text>
+  <text class="ns" x="593" y="336">weight 10%</text>
+
+  <rect class="chip" x="40" y="392" width="196" height="38" rx="19"/>
+  <text class="ft" x="58" y="416">Daily refresh 2 AM</text>
+  <rect class="chip" x="252" y="392" width="176" height="38" rx="19"/>
+  <text class="ft" x="270" y="416">Google taxonomy</text>
+  <rect class="chip" x="444" y="392" width="176" height="38" rx="19"/>
+  <text class="ft" x="462" y="416">Sub-100 ms search</text>
+
+  <text class="ns" x="40" y="466">Autonomous scrape to embed to bundle pipeline</text>
+</svg>

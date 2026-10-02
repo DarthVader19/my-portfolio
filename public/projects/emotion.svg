@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Facial emotion recognition CNN">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0b12"/>
+      <stop offset="0.55" stop-color="#1a0f2c"/>
+      <stop offset="1" stop-color="#090a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="#c084fc" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#7c8cff"/>
+    </marker>
+    <style>
+      text{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}
+      .h{fill:#f2f4fa;font-size:24px;font-weight:700}
+      .s{fill:#98a1bd;font-size:13px}
+      .nt{fill:#eef0f6;font-size:15px;font-weight:600}
+      .ns{fill:#98a1bd;font-size:11px}
+      .ft{fill:#c9d0e6;font-size:12.5px}
+      .emo{fill:#e6d8ff;font-size:13.5px;font-weight:600}
+      .acc{fill:#7ee2b8;font-size:15px;font-weight:600}
+      .n{fill:url(#node);stroke:rgba(255,255,255,0.16);stroke-width:1.4}
+      .chip{fill:rgba(255,255,255,0.045);stroke:rgba(255,255,255,0.12);stroke-width:1.2}
+      .fl{stroke:#7c8cff;stroke-width:1.8;fill:none}
+      .bus{stroke:#c084fc;stroke-opacity:0.55;stroke-width:1.6;fill:none}
+      .face{fill:rgba(255,255,255,0.05);stroke:rgba(192,132,252,0.5);stroke-width:1.4}
+      .px{fill:rgba(192,132,252,0.22)}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <text class="h" x="40" y="58">Facial Emotion Recognition</text>
+  <text class="s" x="40" y="84">Keras CNN &#183; FER2013 &#183; 7 emotion classes</text>
+  <rect class="chip" x="642" y="36" width="118" height="30" rx="15"/>
+  <text class="ns" x="701" y="55" text-anchor="middle">48 x 48 input</text>
+
+  <rect class="face" x="40" y="120" width="48" height="48" rx="6"/>
+  <rect class="px" x="48" y="128" width="8" height="8"/>
+  <rect class="px" x="64" y="136" width="8" height="8"/>
+  <rect class="px" x="56" y="152" width="8" height="8"/>
+  <rect class="px" x="72" y="144" width="8" height="8"/>
+  <text class="ns" x="40" y="184">face crop</text>
+
+  <rect class="n" x="150" y="110" width="170" height="80" rx="14"/>
+  <text class="nt" x="168" y="144">Augment</text>
+  <text class="ns" x="168" y="166">flip, rotate, zoom</text>
+
+  <rect class="n" x="340" y="110" width="170" height="80" rx="14"/>
+  <text class="nt" x="358" y="144">Conv + Pool x3</text>
+  <text class="ns" x="358" y="166">dropout regularised</text>
+
+  <rect class="n" x="530" y="110" width="170" height="80" rx="14"/>
+  <text class="nt" x="548" y="144">Softmax</text>
+  <text class="ns" x="548" y="166">7 emotion classes</text>
+
+  <path class="fl" d="M96 144H146" marker-end="url(#ar)"/>
+  <path class="fl" d="M324 150H336" marker-end="url(#ar)"/>
+  <path class="fl" d="M514 150H526" marker-end="url(#ar)"/>
+
+  <path class="bus" d="M615 190V240"/>
+  <path class="bus" d="M122 240H660"/>
+  <path class="bus" d="M122 240V268" marker-end="url(#ar)"/>
+  <path class="bus" d="M301 240V268" marker-end="url(#ar)"/>
+  <path class="bus" d="M480 240V268" marker-end="url(#ar)"/>
+  <path class="bus" d="M659 240V268" marker-end="url(#ar)"/>
+
+  <rect class="chip" x="40" y="272" width="165" height="52" rx="12"/>
+  <text class="emo" x="122" y="304" text-anchor="middle">Happy</text>
+  <rect class="chip" x="219" y="272" width="165" height="52" rx="12"/>
+  <text class="emo" x="301" y="304" text-anchor="middle">Sad</text>
+  <rect class="chip" x="398" y="272" width="165" height="52" rx="12"/>
+  <text class="emo" x="480" y="304" text-anchor="middle">Angry</text>
+  <rect class="chip" x="577" y="272" width="165" height="52" rx="12"/>
+  <text class="emo" x="659" y="304" text-anchor="middle">Surprise</text>
+
+  <rect class="chip" x="40" y="336" width="165" height="52" rx="12"/>
+  <text class="emo" x="122" y="368" text-anchor="middle">Neutral</text>
+  <rect class="chip" x="219" y="336" width="165" height="52" rx="12"/>
+  <text class="emo" x="301" y="368" text-anchor="middle">Fear</text>
+  <rect class="chip" x="398" y="336" width="165" height="52" rx="12"/>
+  <text class="emo" x="480" y="368" text-anchor="middle">Disgust</text>
+  <rect class="chip" x="577" y="336" width="165" height="52" rx="12"/>
+  <text class="acc" x="659" y="362" text-anchor="middle">65%</text>
+  <text class="ns" x="659" y="380" text-anchor="middle">test accuracy</text>
+
+  <text class="ns" x="40" y="424">Preprocessing and augmentation guard against overfitting</text>
+
+  <rect class="chip" x="40" y="444" width="150" height="38" rx="19"/>
+  <text class="ft" x="58" y="468">Keras / TensorFlow</text>
+  <rect class="chip" x="210" y="444" width="140" height="38" rx="19"/>
+  <text class="ft" x="228" y="468">FER2013</text>
+  <rect class="chip" x="370" y="444" width="190" height="38" rx="19"/>
+  <text class="ft" x="388" y="468">Data augmentation</text>
+</svg>
