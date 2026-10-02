@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { motion, MotionConfig } from 'motion/react';
 import {
   Github, Linkedin, Mail, ArrowUpRight, Download, Copy, Check,
@@ -11,7 +11,12 @@ import {
 } from 'lucide-react';
 import portfolioData from './portfolio-data.json';
 
+const SpaceBackground = lazy(() => import('./components/SpaceBackground'));
 type Theme = 'light' | 'dark' | 'system';
+const TINTS: Record<string, [number, number, number]> = {
+  hero: [200, 210, 255], about: [129, 140, 248], skills: [52, 211, 153], projects: [192, 132, 252],
+  experience: [56, 189, 248], blogs: [244, 114, 182], contact: [129, 140, 248],
+};
 const SW = 1.25; // ultra-light icon stroke
 const ease = [0.32, 0.72, 0, 1] as const;
 const NAV = [
@@ -36,9 +41,9 @@ const Reveal = ({ children, delay = 0, className = '' }: { children: React.React
 );
 
 // Double-bezel: outer shell + inner core with concentric radii
-const Bezel = ({ children, className = '', inner = '' }: { children: React.ReactNode; className?: string; inner?: string }) => (
+const Bezel = ({ children, className = '', inner = '', solid = false }: { children: React.ReactNode; className?: string; inner?: string; solid?: boolean }) => (
   <div className={`rounded-[2rem] bg-shell p-1.5 ring-1 ring-hair ${className}`}>
-    <div className={`h-full overflow-hidden rounded-[calc(2rem-0.375rem)] bg-core core-hl ${inner}`}>{children}</div>
+    <div className={`h-full overflow-hidden rounded-[calc(2rem-0.375rem)] ${solid ? 'bg-core/90' : 'bg-core/55'} core-hl ${inner}`}>{children}</div>
   </div>
 );
 
@@ -81,6 +86,8 @@ export default function App() {
   const [active, setActive] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [bg, setBg] = useState(false);
+  useEffect(() => { const id = setTimeout(() => setBg(true), 400); return () => clearTimeout(id); }, []);
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('portfolio-theme') as Theme) || 'system');
 
   useEffect(() => {
@@ -104,7 +111,7 @@ export default function App() {
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
       { rootMargin: '-40% 0px -55% 0px' },
     );
-    NAV.forEach(([id]) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    [...NAV.map((n) => n[0]), 'contact'].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
     return () => io.disconnect();
   }, []);
 
@@ -129,7 +136,12 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-[100dvh] selection:bg-accent/30">
+      <div className="relative min-h-[100dvh] selection:bg-accent/30">
+        {bg && (
+          <Suspense fallback={null}>
+            <SpaceBackground tint={TINTS[active] ?? TINTS.hero} />
+          </Suspense>
+        )}
         {/* Floating island nav (desktop) */}
         <div className="pointer-events-none fixed inset-x-0 top-0 z-40 hidden justify-center md:flex">
           <nav className="pointer-events-auto mt-6 flex w-max items-center gap-1 rounded-full bg-page/60 p-1.5 ring-1 ring-hair backdrop-blur-2xl">
@@ -258,7 +270,7 @@ export default function App() {
         </section>
 
         {/* About: asymmetrical bento */}
-        <section id="about" className="mx-auto max-w-6xl px-4 py-24 md:py-40">
+        <section id="about" className="scene" style={{ "--hue": "99 102 241" } as React.CSSProperties}>
           <SectionHead tag="About" title={personal.name} />
           <div className="grid gap-6 md:grid-cols-12">
             <Reveal className="md:col-span-8 md:row-span-2">
@@ -282,7 +294,7 @@ export default function App() {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="mx-auto max-w-6xl px-4 py-24 md:py-40">
+        <section id="skills" className="scene" style={{ "--hue": "16 185 129" } as React.CSSProperties}>
           <SectionHead tag="Skills" title="Technical skills" />
           <div className="grid gap-6 md:grid-cols-6">
             {skills.map((group, idx) => {
@@ -305,12 +317,12 @@ export default function App() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="mx-auto max-w-6xl px-4 py-24 md:py-40">
+        <section id="projects" className="scene" style={{ "--hue": "168 85 247" } as React.CSSProperties}>
           <SectionHead tag="Projects" title="Selected work" />
           <div className="grid gap-6 md:grid-cols-2">
             {projects.map((p, idx) => (
               <Reveal key={p.id} delay={(idx % 2) * 0.1}>
-                <Bezel className="h-full" inner="flex flex-col">
+                <Bezel solid className="h-full" inner="flex flex-col">
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
                       src={p.image}
@@ -337,7 +349,7 @@ export default function App() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="mx-auto max-w-6xl px-4 py-24 md:py-40">
+        <section id="experience" className="scene" style={{ "--hue": "14 165 233" } as React.CSSProperties}>
           <SectionHead tag="Experience" title="Where I've worked" />
           <Reveal>
             <Bezel inner="divide-y divide-hair">
@@ -356,7 +368,7 @@ export default function App() {
         </section>
 
         {/* Writing */}
-        <section id="blogs" className="mx-auto max-w-6xl px-4 py-24 md:py-40">
+        <section id="blogs" className="scene" style={{ "--hue": "236 72 153" } as React.CSSProperties}>
           <SectionHead tag="Writing" title="Articles" />
           <Reveal>
             <Bezel inner="divide-y divide-hair">
@@ -383,7 +395,7 @@ export default function App() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mx-auto max-w-6xl px-4 pb-16 pt-24 md:pt-40">
+        <section id="contact" className="scene pb-16 md:pb-16" style={{ "--hue": "99 102 241" } as React.CSSProperties}>
           <Reveal>
             <Bezel inner="flex flex-col items-start gap-10 p-8 md:flex-row md:items-center md:justify-between md:p-14">
               <div>
