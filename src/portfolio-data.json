@@ -23,7 +23,7 @@
       "title": "Agent Evaluation & Benchmarking Framework",
       "description": "Evaluation framework that benchmarks ReAct, Plan-and-Execute, and LangGraph agents on custom and GAIA-style tasks. An automated harness measures success rate, token efficiency, error recovery, and latency across 100+ cases, with reflection loops and a comparison of LangGraph, CrewAI, and AutoGen.",
       "tags": ["LangGraph", "Agents", "Evaluation"],
-      "link": "#",
+      "link": "https://github.com/DarthVader19/Agent_Eval/",
       "image": "/projects/agents.svg"
     },
     {

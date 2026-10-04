@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+git.txt
+sync-fork.bat
+sync-fork.ps1
+.gitignore
+
